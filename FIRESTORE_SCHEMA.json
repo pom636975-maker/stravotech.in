@@ -1,0 +1,78 @@
+// FIRESTORE SCHEMA DOCUMENTATION
+// This file documents the complete Firestore data structure
+
+/**
+ * ========================================
+ * COLLECTION: tools
+ * ========================================
+ * 
+ * Purpose: Stores all available tools with metadata
+ * Document ID: Auto-generated or custom slug
+ * 
+ * Schema:
+ */
+
+{
+  "tools": {
+    "{toolId}": {
+      "name": "Age Calculator",              // Required: Display name
+      "slug": "age-calculator",              // Required: URL-friendly identifier
+      "category": "Calculators",             // Required: Tool category
+      "enabled": true,                       // Required: Visibility flag
+      "views": 0,                            // Required: Total view count (atomic increment only)
+      "createdAt": "2024-01-15T10:30:00Z",  // Required: ISO timestamp
+      "seoTitle": "Age Calculator Tool",     // Optional: SEO title
+      "seoDescription": "Calculate your age in years, months, and days"  // Optional: SEO meta
+    }
+  }
+}
+
+/**
+ * ========================================
+ * COLLECTION: stats
+ * ========================================
+ * 
+ * Purpose: Global statistics for dashboard
+ * Document ID: "global" (fixed)
+ * 
+ * Schema:
+ */
+
+{
+  "stats": {
+    "global": {
+      "totalViews": 1250,                    // Required: Total views across all tools (atomic only)
+      "lastUpdated": "2024-01-15T10:30:00Z"  // Required: Last view recorded
+    }
+  }
+}
+
+/**
+ * ========================================
+ * INDEXES (if needed)
+ * ========================================
+ * 
+ * For large databases, create these Firestore indexes:
+ * 
+ * Index 1: Sort by views
+ * Collection: tools
+ * Fields: enabled (Ascending) + views (Descending)
+ * 
+ * Index 2: Sort by creation
+ * Collection: tools
+ * Fields: enabled (Ascending) + createdAt (Descending)
+ */
+
+/**
+ * ========================================
+ * INITIALIZATION CHECKLIST
+ * ========================================
+ * 
+ * 1. Create Firestore database in Firebase Console
+ * 2. Copy security rules from FIRESTORE_RULES.txt
+ * 3. Click "Seed Tools" button in app (admin only)
+ * 4. Verify tools collection has 30 documents
+ * 5. Verify stats/global document exists
+ * 6. Test public access (should see only enabled tools)
+ * 7. Test admin access (should see all tools + stats)
+ */

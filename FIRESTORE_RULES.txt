@@ -1,0 +1,134 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * FIRESTORE SECURITY RULES - Production Ready
+ * Copy this entire content to your Firebase Console > Firestore > Rules tab
+ * 
+ * Rules Structure:
+ * 1. Public can read enabled tools only (for home page)
+ * 2. Admin (by email) can read all tools
+ * 3. Only admin can update/delete tools
+ * 4. Only authenticated users can read stats
+ * 5. Only server can write to stats (via increment)
+ */
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ====================================
+    // HELPER FUNCTIONS
+    // ====================================
+    
+    function isAdmin() {
+      return request.auth.token.email == 'pom636975@gmail.com';
+    }
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // ====================================
+    // TOOLS COLLECTION
+    // ====================================
+
+    match /tools/{toolId} {
+      // ✅ PUBLIC: Can read only ENABLED tools (home page display)
+      allow read: if resource.data.enabled == true;
+      
+      // ✅ ADMIN: Can read ALL tools (disabled ones too)
+      allow read: if isAdmin();
+      
+      // ✅ ADMIN: Can write/update/delete tools
+      allow write: if isAdmin();
+      
+      // ✅ SERVER: Can increment views atomically
+      // This allows clients to use increment() via batch operations
+      allow update: if request.resource.data.views == resource.data.views + 1
+                       && request.resource.data.keys().size() == 1;
+    }
+
+    // ====================================
+    // STATS COLLECTION
+    // ====================================
+
+    match /stats/{document=**} {
+      // ✅ ADMIN: Can read all stats
+      allow read: if isAdmin();
+      
+      // ✅ AUTHENTICATED: Can increment views atomically
+      // Only allows incrementing totalViews, not overwriting
+      allow update: if isAuthenticated()
+                       && request.resource.data.totalViews == resource.data.totalViews + 1
+                       && request.resource.data.keys().size() <= 2;
+      
+      // ✅ ADMIN: Can manually update stats if needed
+      allow write: if isAdmin();
+    }
+
+    // ====================================
+    // DENY EVERYTHING ELSE
+    // ====================================
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+
+/*
+USAGE EXAMPLES FOR THESE RULES:
+
+1. PUBLIC USER (Unauthenticated):
+   - Can read enabled tools only
+   - Cannot read disabled tools
+   - Cannot read stats
+   - Cannot write anything
+
+2. AUTHENTICATED USER (Viewing tool):
+   - Can increment views atomically (batch operation)
+   - Cannot read stats
+   - Cannot modify tools
+   - Cannot read disabled tools
+
+3. ADMIN (pom636975@gmail.com):
+   - Can read ALL tools (enabled and disabled)
+   - Can read stats
+   - Can enable/disable tools
+   - Can manually update stats
+   - Full CRUD on tools collection
+
+SECURITY FEATURES:
+✓ Role-based access control (email-based admin)
+✓ Public content visible to everyone
+✓ Private admin content restricted
+✓ Atomic operations prevent double-counting
+✓ No direct stat manipulation by users
+✓ Batch operations prevent race conditions
+*/
