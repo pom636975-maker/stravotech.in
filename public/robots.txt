@@ -1,16 +1,16 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
+Disallow: /api/
 Disallow: /*.json$
-Crawl-delay: 1
 
-# Google
+# Optimize for major search engines
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 0
+Disallow: /admin/
 
-# Bing
 User-agent: Bingbot
 Allow: /
+Disallow: /admin/
 
 Sitemap: https://stravotech.in/sitemap.xml

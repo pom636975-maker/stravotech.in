@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 const LoanInterface: React.FC = () => {
@@ -23,40 +22,60 @@ const LoanInterface: React.FC = () => {
   const totalInterest = totalPayable - numLoan;
 
   return (
-    <div className="p-10 lg:p-16">
-      <div className="grid lg:grid-cols-2 gap-16">
-        <div className="space-y-8">
-          <div>
-            <label className="text-sm font-black text-slate-700 uppercase tracking-widest block mb-3">Total Loan Amount ($)</label>
-            <input type="text" placeholder="0.00" className="w-full p-5 rounded-2xl bg-slate-50 border border-slate-100 text-2xl font-black focus:ring-4 focus:ring-indigo-500/10 outline-none" value={loanAmount} onChange={e => setLoanAmount(e.target.value)} />
-          </div>
-          <div className="grid grid-cols-2 gap-6">
+    <div className="p-6 md:p-10 bg-gradient-to-b from-slate-50 to-white">
+      <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-10">
+        {/* Input */}
+        <div className="flex-1 space-y-6 w-full min-w-0">
+          <div className="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm space-y-5">
+            <h3 className="text-lg font-black text-slate-800 tracking-tight">Loan Parameters</h3>
+
             <div>
-              <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-3">Interest Rate (%)</label>
-              <input type="text" placeholder="5.0" className="w-full p-5 rounded-2xl bg-slate-50 border border-slate-100 text-xl font-black focus:ring-4 focus:ring-indigo-500/10 outline-none" value={interestRate} onChange={e => setInterestRate(e.target.value)} />
+              <label className="block text-[9px] font-black text-slate-400 uppercase mb-2 tracking-widest">Total Loan Amount ($)</label>
+              <input type="number" placeholder="0.00" className="w-full px-4 py-4 rounded-xl bg-slate-50/50 border border-slate-200 text-xl font-black focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none hover:bg-slate-50 transition-all" value={loanAmount} onChange={e => setLoanAmount(e.target.value)} />
             </div>
-            <div>
-              <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-3">Term (Months)</label>
-              <input type="text" placeholder="60" className="w-full p-5 rounded-2xl bg-slate-50 border border-slate-100 text-xl font-black focus:ring-4 focus:ring-indigo-500/10 outline-none" value={termMonths} onChange={e => setTermMonths(e.target.value)} />
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-[9px] font-black text-slate-400 uppercase mb-2 tracking-widest">Interest Rate (%)</label>
+                <input type="number" step="0.1" placeholder="5.0" className="w-full px-4 py-3 rounded-xl bg-slate-50/50 border border-slate-200 text-sm font-bold focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none hover:bg-slate-50 transition-all text-center" value={interestRate} onChange={e => setInterestRate(e.target.value)} />
+              </div>
+              <div>
+                <label className="block text-[9px] font-black text-slate-400 uppercase mb-2 tracking-widest">Term (Months)</label>
+                <input type="number" placeholder="60" className="w-full px-4 py-3 rounded-xl bg-slate-50/50 border border-slate-200 text-sm font-bold focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none hover:bg-slate-50 transition-all text-center" value={termMonths} onChange={e => setTermMonths(e.target.value)} />
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="bg-slate-900 rounded-[3rem] p-12 text-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-600/10 blur-[100px] rounded-full"></div>
-          <div className="relative z-10 text-center mb-12">
-            <span className="text-slate-500 text-xs font-black uppercase tracking-[0.3em] mb-4 block">Monthly Payment</span>
-            <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-emerald-400 tracking-tighter break-words">${monthly.toLocaleString()}</div>
-          </div>
-          <div className="relative z-10 space-y-6 pt-10 border-t border-slate-800">
-             <div className="flex justify-between items-start gap-4">
-                <span className="text-xs font-black text-slate-500 uppercase whitespace-nowrap">Total Payable</span>
-                <span className="text-sm md:text-lg font-bold text-right break-words">${totalPayable.toLocaleString(undefined, {maximumFractionDigits: 0})}</span>
-             </div>
-             <div className="flex justify-between items-start gap-4">
-                <span className="text-xs font-black text-slate-500 uppercase whitespace-nowrap">Total Interest Cost</span>
-                <span className="text-sm md:text-lg font-bold text-amber-400 text-right break-words">${totalInterest.toLocaleString(undefined, {maximumFractionDigits: 0})}</span>
-             </div>
+        {/* Result */}
+        <div className="w-full lg:w-80 xl:w-96 flex-none">
+          <div className="bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 rounded-[2rem] p-8 sm:p-10 text-white shadow-xl relative overflow-hidden min-h-[300px] flex flex-col justify-center">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-[80px] rounded-full"></div>
+            
+            <div className="relative z-10 space-y-6 w-full">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/10 rounded-full text-[9px] font-black uppercase tracking-[0.15em] border border-white/5">
+                <i className="fa-solid fa-money-bill-wave"></i> Monthly Payment
+              </span>
+
+              <div className="text-center">
+                <div className="text-5xl sm:text-6xl font-black text-emerald-400 tracking-tighter leading-none">
+                  ${monthly.toLocaleString()}
+                </div>
+                <p className="text-slate-500 text-xs font-bold uppercase tracking-wider mt-2">Per Month</p>
+              </div>
+              
+              <div className="pt-6 border-t border-white/10 space-y-3 text-xs font-medium text-slate-400">
+                <div className="flex justify-between">
+                  <span>Total Payable</span>
+                  <span className="font-bold text-white">${totalPayable.toLocaleString(undefined, {maximumFractionDigits: 0})}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Total Interest Cost</span>
+                  <span className="font-bold text-amber-400">${totalInterest.toLocaleString(undefined, {maximumFractionDigits: 0})}</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute -bottom-12 -right-12 w-48 h-48 bg-emerald-500/5 rounded-full blur-2xl"></div>
           </div>
         </div>
       </div>

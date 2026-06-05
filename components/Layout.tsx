@@ -37,9 +37,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Premium Navbar */}
-      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 shadow-sm">
+      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/60 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-20 items-center">
+          <div className="flex justify-between h-16 sm:h-20 items-center">
             <Link to="/" className="flex items-center space-x-3 group flex-shrink-0">
               <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200 group-hover:rotate-12 transition-transform duration-300">
                 <i className="fa-solid fa-bolt-lightning text-white text-xl"></i>
@@ -113,7 +113,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-slate-100 bg-white py-6 px-4 space-y-2 animate-in slide-in-from-top duration-300">
+          <div className="lg:hidden border-t border-slate-100 bg-white py-5 px-4 space-y-2 shadow-xl">
              <div className="mb-4 relative">
                 <i className="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
                 <input 
@@ -123,6 +123,24 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
+                {filteredTools.length > 0 && (
+                  <div className="mt-2 bg-white border border-slate-200 rounded-xl shadow-lg overflow-hidden">
+                    {filteredTools.map(tool => (
+                      <button
+                        key={tool.id}
+                        onClick={() => {
+                          navigate(tool.path);
+                          setSearchQuery('');
+                          setIsMenuOpen(false);
+                        }}
+                        className="w-full px-4 py-3 text-left hover:bg-slate-50 flex items-center gap-3 transition-colors"
+                      >
+                        <i className={`fa-solid ${tool.icon} text-indigo-500 w-5`}></i>
+                        <span className="text-sm font-bold text-slate-700">{tool.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             {navLinks.map((link) => (
               <Link 
@@ -138,27 +156,28 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         )}
       </nav>
 
-      <main className="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="flex flex-col lg:flex-row gap-12">
-          <div className="flex-grow">
+      <main className="flex-grow max-w-7xl mx-auto w-full px-3 sm:px-6 lg:px-8 pb-16 sm:pb-20">
+        <div className="flex flex-col lg:flex-row gap-8 xl:gap-12">
+          <div className="flex-grow min-w-0">
             {children}
           </div>
           
           <aside className="hidden lg:block w-[320px] flex-shrink-0">
             <div className="sticky top-28 space-y-8">
-               <div className="bg-gradient-to-br from-indigo-600 to-blue-700 p-8 rounded-3xl text-white shadow-xl shadow-indigo-100 relative overflow-hidden">
+              <div className="bg-gradient-to-br from-indigo-600 to-blue-700 p-8 rounded-3xl text-white shadow-xl shadow-indigo-100 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 blur-2xl rounded-full translate-x-10 -translate-y-10"></div>
-                  <h3 className="text-xl font-bold mb-4">Stravotech Pro</h3>
-                  <p className="text-sm text-indigo-100 leading-relaxed mb-6">
-                    Our tools are, and will always be, 100% free. We believe education and productivity shouldn't have a price tag.
+                  <div className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-indigo-200 mb-4">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping"></span>
+                    We're Back - 2026
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Zero Ads. Always Free.</h3>
+                  <p className="text-sm text-indigo-100 leading-relaxed mb-5">
+                    We rebuilt Stravotech with <strong>no advertisements</strong>. Every tool is free: no popups, no banners, no distractions. Just tools that work.
                   </p>
-                  <div className="flex items-center space-x-2">
-                    <div className="flex -space-x-2">
-                      {[1,2,3,4].map(i => (
-                        <div key={i} className="w-8 h-8 rounded-full border-2 border-indigo-500 bg-indigo-400 flex items-center justify-center text-[10px] font-bold">U{i}</div>
-                      ))}
-                    </div>
-                    <div className="pl-4 text-[10px] font-black uppercase tracking-widest text-indigo-200">10k+ Daily Users</div>
+                  <div className="flex flex-wrap gap-2">
+                    {['No Sign-up', 'No Ads', 'No Cost'].map(badge => (
+                      <span key={badge} className="text-[10px] font-black uppercase tracking-widest px-2.5 py-1 bg-white/15 rounded-full border border-white/20">{badge}</span>
+                    ))}
                   </div>
                </div>
             </div>
@@ -177,20 +196,20 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <span className="text-2xl font-black tracking-tight">Stravotech</span>
               </Link>
               <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-                Empowering students and professionals with lightning-fast, highly accurate web tools. Built for North America.
+                Empowering students and professionals with lightning-fast, highly accurate <strong>online calculators</strong> and <strong>converters</strong>. Built for North America & India.
               </p>
             </div>
             
             <div>
               <h4 className="text-sm font-bold uppercase tracking-widest text-indigo-400 mb-6">Popular Tools</h4>
               <ul className="space-y-4 text-slate-400 text-sm font-medium">
-                <li><Link to="/student/gpa-calculator" className="hover:text-white transition-colors">GPA Tracker</Link></li>
-                <li><Link to="/finance/tax-refund-calculator" className="hover:text-white transition-colors">Tax Refund Calculator</Link></li>
-                <li><Link to="/finance/stock-profit-calculator" className="hover:text-white transition-colors">Stock Profit Calculator</Link></li>
-                <li><Link to="/finance/fuel-cost-calculator" className="hover:text-white transition-colors">Fuel Cost Calculator</Link></li>
-                <li><Link to="/finance/investment-growth-calculator" className="hover:text-white transition-colors">Investment Growth</Link></li>
+                <li><Link to="/student/gpa-calculator" className="hover:text-white transition-colors">GPA Calculator 4.0</Link></li>
+                <li><Link to="/cgpa-to-percentage" className="hover:text-white transition-colors">CGPA to Percentage</Link></li>
+                <li><Link to="/finance/loan-payment-calculator" className="hover:text-white transition-colors">Loan EMI Calculator</Link></li>
+                <li><Link to="/compress-image-to-50kb" className="hover:text-white transition-colors">Image Compressor 50KB</Link></li>
+                <li><Link to="/gst-calculator-india" className="hover:text-white transition-colors">GST Calculator India</Link></li>
                 <li><Link to="/finance/mortgage-calculator" className="hover:text-white transition-colors">Mortgage Planner</Link></li>
-                <li><Link to="/work/invoice-generator" className="hover:text-white transition-colors">Professional Invoicing</Link></li>
+                <li><Link to="/work/image-to-pdf" className="hover:text-white transition-colors">Convert Image to PDF</Link></li>
                 <li><Link to="/student/percentage-calculator" className="hover:text-white transition-colors">Percentage Tools</Link></li>
               </ul>
             </div>

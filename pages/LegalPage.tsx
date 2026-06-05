@@ -5,61 +5,120 @@ import SEO from '../components/SEO';
 const LegalPage: React.FC<{ type?: string }> = ({ type }) => {
   const contentMap: Record<string, any> = {
     'about': {
-      title: 'Our Mission at Stravotech',
-      content: 'Stravotech is more than just a collection of calculators; it is a vision to democratize professional-grade information. In a world where precision is often hidden behind paywalls or complex accounts, we offer a sanctuary of simplicity. Our toolkit is meticulously engineered to provide students and professionals across North America with the data they need to make informed decisions—instantly and for free.'
+      title: 'About Stravotech & Our Mission',
+      content: (
+        <>
+          <p className="first-letter:text-5xl first-letter:font-black first-letter:text-indigo-600 first-letter:mr-3 first-letter:float-left mb-6">
+            Stravotech was founded by Om Patel with a clear vision: to democratize access to premium, accurate, and lightning-fast calculators without paywalls or invasive tracking. 
+          </p>
+          <p className="mb-6">
+            In an internet flooded with clunky, outdated, and ad-heavy utilities, we realized students, freelancers, and professionals needed an elegant toolkit they could trust. We strive to provide calculations mathematically aligned with <strong>NCERT standards (India)</strong>, rigorous financial benchmarks, and university grading systems across North America and Asia.
+          </p>
+          <h3 className="text-2xl font-black text-slate-800 mt-10 mb-4">Our E-E-A-T Commitment</h3>
+          <p className="mb-6">
+            As part of our commitment to Experience, Expertise, Authoritativeness, and Trustworthiness (E-E-A-T), Stravotech calculators are manually verified for logical accuracy against established Wolfram Alpha models and active Government Taxation Boards (e.g., GST Council). All logic happens instantaneously on your device, ensuring maximum privacy and data security.
+          </p>
+        </>
+      )
     },
     'privacy': {
-      title: 'Privacy & Data Security',
-      content: 'At Stravotech, your data never leaves your device. Unlike traditional "Cloud" tools that store your inputs in massive databases, we utilize modern browser-side processing. Whether you are generating an invoice or calculating your GPA, the logic happens on your machine. We do not track, profile, or sell your specific inputs. Our revenue comes from standard advertising, which is handled by partners committed to the highest industry standards of transparency.'
+      title: 'Privacy Policy & Cookie Usage',
+      content: (
+        <>
+          <p className="mb-6">
+            At Stravotech, your privacy is our priority. Unlike cloud-based SaaS tools, <strong>none of the data you enter into our calculators (like your grades, salary, or financial investments) is ever sent to our servers.</strong> The calculations are processed entirely within your local browser.
+          </p>
+          <h3 className="text-2xl font-black text-slate-800 mt-10 mb-4">100% Ad-Free Commitment</h3>
+          <p className="mb-6">
+            In our commitment to providing a clean, fast, and privacy-respecting user experience, <strong>Stravotech is entirely ad-free</strong>. We do not use Google AdSense, third-party advertising cookies, or invasive tracking scripts. None of your inputs or behavioral data is sold to advertisers or marketing networks.
+          </p>
+
+          <h3 className="text-2xl font-black text-slate-800 mt-10 mb-4">Log Files & Analytics</h3>
+          <p className="mb-6">
+            Like many other Web sites, Stravotech uses standard analytics tools that collect non-personally identifying information. This information includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date/time stamp, referring/exit pages, and number of clicks to analyze trends, administer the site, track user movement, and gather demographic information. This is used solely to improve the user experience.
+          </p>
+        </>
+      )
     },
     'terms': {
-      title: 'Terms of Professional Use',
-      content: 'Accessing Stravotech signifies your agreement to use our services as informational aids. We employ rigorous testing to ensure our GPA, Mortgage, and Tax calculators align with current North American standards. However, results are intended for guidance and estimation. We recommend consulting with certified financial advisors or academic counselors for critical official documentation.'
+      title: 'Terms of Service',
+      content: (
+        <>
+          <p className="mb-6">
+            By accessing Stravotech.in, you inherently agree to these Terms of Service. If you do not agree with any of these terms, you are prohibited from using or accessing this site. All materials contained in this website are protected by applicable copyright and trademark law.
+          </p>
+          <h3 className="text-2xl font-black text-slate-800 mt-10 mb-4">Educational & Estimational Purposeless</h3>
+          <p className="mb-6">
+            The calculators provided on Stravotech (such as Mortgage, Loan, Tax, and GPA) are designed to provide highly accurate <strong>estimations</strong>. However, algorithms cannot account for specific local banking regulations, hidden broker fees, university-specific grading curves, or retroactive tax code changes. 
+            Therefore, <strong>Stravotech acts strictly as an informational aid</strong> and does not replace official, certified financial, legal, or academic advisement.
+          </p>
+          <h3 className="text-2xl font-black text-slate-800 mt-10 mb-4">User License</h3>
+          <p className="mb-6">
+            Permission is granted to temporarily use the tools on Stravotech for personal, non-commercial, and commercial informational viewing. You may not attempt to reverse engineer any software contained on Stravotech's website or scrape the content programmatically without our express written consent.
+          </p>
+        </>
+      )
     },
     'contact': {
-      title: 'Get in Touch with the Team',
-      content: 'We are constantly expanding our library of tools. If you have a specific calculator request or have identified an area for improvement, our engineering team is eager to hear from you. Reach out via email at support@stravotech.com. We prioritize feedback from our core community of students and freelancers.'
+      title: 'Contact the Stravotech Team',
+      content: (
+        <>
+          <p className="mb-6">
+            We are deeply committed to maintaining the highest standards for our users. Whether you have found a minor algorithmic discrepancy in a calculator, want to suggest a new tool, or have a business inquiry, we'd love to hear from you.
+          </p>
+          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 mt-8 max-w-md">
+            <h4 className="font-black text-slate-800 mb-2">Primary Contact Details</h4>
+            <p className="text-slate-600 mb-4"><strong>Founder:</strong> Om Patel</p>
+            <p className="text-slate-600 mb-4"><strong>Email:</strong> <a href="mailto:support@stravotech.in" className="text-indigo-600 hover:underline">support@stravotech.in</a></p>
+            <p className="text-slate-600 text-sm">We typically respond to technical calculator feedback within 24-48 business hours.</p>
+          </div>
+        </>
+      )
     },
     'disclaimer': {
-      title: 'Legal Disclaimer',
-      content: 'Calculations provided by Stravotech are mathematical estimations based on standardized formulas. They do not account for every local variable, hidden fee, or unique academic policy. Stravotech and its creators are not liable for any financial or academic consequences arising from the use of these tools.'
+      title: 'Legal & Accuracy Disclaimer',
+      content: (
+        <>
+          <p className="mb-6">
+            The materials and tools on Stravotech's website are provided on an 'as is' basis. Stravotech makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+          </p>
+          <p className="mb-6">
+            Furthermore, Stravotech does not warrant or make any representations concerning the absolute precision, likely results, or reliability of the use of the mathematical materials on its website. When applying for loans (Mortgages, EMI) or calculating official grades (GPA, Percentage), users must verify the finalized numbers directly with their corresponding financial institutions or universities.
+          </p>
+        </>
+      )
     }
   };
 
   const page = contentMap[type || 'about'];
 
   return (
-    <div className="max-w-3xl mx-auto py-12">
+    <div className="max-w-4xl mx-auto py-12 px-6">
       <SEO 
         title={`${page.title} | Stravotech`} 
-        description={`${page.content.substring(0, 160)}...`} 
+        description={`Read the official ${page.title} for Stravotech.`} 
       />
       <div className="mb-12">
         <div className="w-16 h-1 w-1 bg-indigo-600 mb-6"></div>
         <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 tracking-tighter">{page.title}</h1>
       </div>
-      <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-8 font-medium text-lg">
-        <p className="first-letter:text-5xl first-letter:font-black first-letter:text-indigo-600 first-letter:mr-3 first-letter:float-left">{page.content}</p>
-        <p>Stravotech is committed to maintaining a clean, fast, and user-centric platform. We regularly update our formulas to ensure compliance with the latest standards in finance and education across North America, including the United States and Canada.</p>
+      <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-2 font-medium text-lg">
+        {page.content}
         
-        <div className="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 mt-12">
-          <h3 className="text-2xl font-black text-slate-900 mb-6">The Stravotech Promise</h3>
-          <ul className="space-y-4">
+        <div className="bg-slate-50 p-8 sm:p-10 rounded-[2.5rem] border border-slate-100 mt-16">
+          <h3 className="text-2xl font-black text-slate-900 mb-6">The Stravotech Quality Guarantee</h3>
+          <ul className="space-y-4 text-base">
              <li className="flex items-start">
-                <i className="fa-solid fa-check-circle text-indigo-600 mt-1.5 mr-4"></i>
-                <span><strong>Always Free:</strong> No hidden tiers or premium features.</span>
+                <i className="fa-solid fa-check-circle text-indigo-600 mt-1 mr-4"></i>
+                <span className="leading-snug"><strong>Privacy First:</strong> Your calculation data stays locally on your device. We never capture raw inputs.</span>
              </li>
              <li className="flex items-start">
-                <i className="fa-solid fa-check-circle text-indigo-600 mt-1.5 mr-4"></i>
-                <span><strong>No Registration:</strong> We don't collect your email address.</span>
+                <i className="fa-solid fa-check-circle text-indigo-600 mt-1 mr-4"></i>
+                <span className="leading-snug"><strong>Always Free:</strong> Unrestricted access to 30+ premium tools without any paywalls or required signups.</span>
              </li>
              <li className="flex items-start">
-                <i className="fa-solid fa-check-circle text-indigo-600 mt-1.5 mr-4"></i>
-                <span><strong>Universal Compatibility:</strong> Works flawlessly on mobile, tablet, and desktop.</span>
-             </li>
-             <li className="flex items-start">
-                <i className="fa-solid fa-check-circle text-indigo-600 mt-1.5 mr-4"></i>
-                <span><strong>Verified Accuracy:</strong> Formulas stress-tested against industry standards.</span>
+                <i className="fa-solid fa-check-circle text-indigo-600 mt-1 mr-4"></i>
+                <span className="leading-snug"><strong>Verified Logic:</strong> Algorithms consistently tested against real-world systems, from Indian GST to US Academic scales.</span>
              </li>
           </ul>
         </div>

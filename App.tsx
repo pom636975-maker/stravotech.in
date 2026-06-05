@@ -81,17 +81,31 @@ const App: React.FC = () => {
           <Route path="/blog/:slug" element={<BlogPage />} />
 
           {/* SEO Cluster Pages – MUST be before /:category/:toolId */}
+          <Route path="/percentage-calculator" element={<Layout><ToolPage /></Layout>} />
+          <Route path="/gpa-calculator" element={<Layout><ToolPage /></Layout>} />
+          <Route path="/age-calculator" element={<Layout><ToolPage /></Layout>} />
+          <Route path="/attendance-calculator" element={<Layout><ToolPage /></Layout>} />
+          <Route path="/gst-calculator-india" element={<Layout><ToolPage /></Layout>} />
+          <Route path="/sip-calculator" element={<Layout><ToolPage /></Layout>} />
+          <Route path="/fd-calculator" element={<Layout><ToolPage /></Layout>} />
+
+          {/* SEO Cluster Pages */}
           <Route path="/compress-image-to-50kb" element={<Layout><ClusterPage /></Layout>} />
           <Route path="/compress-image-to-100kb" element={<Layout><ClusterPage /></Layout>} />
           <Route path="/jpeg-compressor-online" element={<Layout><ClusterPage /></Layout>} />
           <Route path="/resize-image-online" element={<Layout><ClusterPage /></Layout>} />
           <Route path="/income-tax-calculator-india" element={<Layout><ClusterPage /></Layout>} />
-          <Route path="/gst-calculator-india" element={<Layout><ClusterPage /></Layout>} />
           <Route path="/gpa-calculator-from-percentage" element={<Layout><ClusterPage /></Layout>} />
           <Route path="/cgpa-to-percentage" element={<Layout><ClusterPage /></Layout>} />
           <Route path="/percentage-calculator-marks" element={<Layout><ClusterPage /></Layout>} />
+          <Route path="/378-out-of-500-as-percentage" element={<Layout><ClusterPage /></Layout>} />
+          <Route path="/520-out-of-600-as-percentage" element={<Layout><ClusterPage /></Layout>} />
+          <Route path="/580-out-of-600-as-percentage" element={<Layout><ClusterPage /></Layout>} />
+          <Route path="/sales-tax-by-state" element={<Layout><ClusterPage /></Layout>} />
 
+          {/* Category-based routes for legacy support */}
           <Route path="/:category/:toolId" element={<Layout><ToolPage /></Layout>} />
+
           <Route path="/about" element={<Layout><LegalPage type="about" /></Layout>} />
           <Route path="/privacy" element={<Layout><LegalPage type="privacy" /></Layout>} />
           <Route path="/terms" element={<Layout><LegalPage type="terms" /></Layout>} />
@@ -102,8 +116,8 @@ const App: React.FC = () => {
           <Route path="/holi/:username" element={<HoliMiniSite />} />
           <Route path="/holi/dashboard" element={<Layout><UserDashboard /></Layout>} />
 
-          {/* Fallback for single-segment tool IDs (indexing safety) */}
-          <Route path="/:toolId" element={<ToolRedirect />} />
+          {/* Primary Flat Routes Implementation */}
+          <Route path="/:toolId" element={<Layout><ToolPage /></Layout>} />
 
           {/* Admin Routes */}
           <Route path="/admin/login" element={<Login />} />

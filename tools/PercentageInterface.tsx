@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 const PercentageInterface: React.FC = () => {
@@ -11,49 +10,82 @@ const PercentageInterface: React.FC = () => {
   const [val5, setVal5] = useState<string>('100');
   const [val6, setVal6] = useState<string>('150');
 
-  const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text);
-  };
-
   const calc1 = ((parseFloat(val1) || 0)/100 * (parseFloat(val2) || 0)).toFixed(2);
   const calc2 = (parseFloat(val4) || 0) === 0 ? "0.00" : ((parseFloat(val3) || 0)/(parseFloat(val4) || 0) * 100).toFixed(2);
   const calc3 = (parseFloat(val5) || 0) === 0 ? "0.00" : (((parseFloat(val6) || 0) - (parseFloat(val5) || 0)) / (parseFloat(val5) || 0) * 100).toFixed(2);
 
+  const cards = [
+    {
+      title: 'What is % of X',
+      icon: 'fa-calculator',
+      inputs: [
+        { label: 'Percentage', placeholder: '%', value: val1, onChange: setVal1 },
+        { label: 'Value', placeholder: 'Value', value: val2, onChange: setVal2 },
+      ],
+      result: calc1,
+      suffix: '',
+    },
+    {
+      title: 'X is what % of Y',
+      icon: 'fa-divide',
+      inputs: [
+        { label: 'Part', placeholder: 'Part', value: val3, onChange: setVal3 },
+        { label: 'Total', placeholder: 'Total', value: val4, onChange: setVal4 },
+      ],
+      result: calc2,
+      suffix: '%',
+    },
+    {
+      title: '% Change',
+      icon: 'fa-arrow-trend-up',
+      inputs: [
+        { label: 'From', placeholder: 'From', value: val5, onChange: setVal5 },
+        { label: 'To', placeholder: 'To', value: val6, onChange: setVal6 },
+      ],
+      result: calc3,
+      suffix: '%',
+      isChange: true,
+    },
+  ];
+
   return (
-    <div className="p-10 lg:p-16 space-y-12">
-      <div className="grid md:grid-cols-3 gap-8">
-        <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 space-y-6 flex flex-col hover:bg-white hover:border-indigo-100 transition-all shadow-sm">
-          <h4 className="text-[10px] font-black text-indigo-600 uppercase tracking-[0.2em]">What is % of X</h4>
-          <div className="space-y-4 flex-grow">
-            <input type="text" placeholder="%" className="w-full p-4 rounded-xl border border-slate-200 font-bold outline-none focus:ring-2 focus:ring-indigo-500" value={val1} onChange={e => setVal1(e.target.value)} />
-            <input type="text" placeholder="Value" className="w-full p-4 rounded-xl border border-slate-200 font-bold outline-none focus:ring-2 focus:ring-indigo-500" value={val2} onChange={e => setVal2(e.target.value)} />
-          </div>
-          <div className="text-center pt-6 border-t border-slate-100">
-             <span className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 break-words">{calc1}</span>
-          </div>
-        </div>
+    <div className="p-6 md:p-10 bg-gradient-to-b from-slate-50 to-white">
+      <div className="grid md:grid-cols-3 gap-6">
+        {cards.map((card, i) => (
+          <div key={i} className="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm space-y-5 flex flex-col hover:border-indigo-100 transition-all group">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-xl bg-indigo-50 flex items-center justify-center border border-indigo-100 group-hover:bg-indigo-600 group-hover:border-indigo-600 transition-all">
+                <i className={`fa-solid ${card.icon} text-xs text-indigo-600 group-hover:text-white transition-all`}></i>
+              </div>
+              <h4 className="text-xs font-black text-slate-700 uppercase tracking-wider">{card.title}</h4>
+            </div>
 
-        <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 space-y-6 flex flex-col hover:bg-white hover:border-indigo-100 transition-all shadow-sm">
-          <h4 className="text-[10px] font-black text-indigo-600 uppercase tracking-[0.2em]">X is what % of Y</h4>
-          <div className="space-y-4 flex-grow">
-            <input type="text" placeholder="Part" className="w-full p-4 rounded-xl border border-slate-200 font-bold outline-none focus:ring-2 focus:ring-indigo-500" value={val3} onChange={e => setVal3(e.target.value)} />
-            <input type="text" placeholder="Total" className="w-full p-4 rounded-xl border border-slate-200 font-bold outline-none focus:ring-2 focus:ring-indigo-500" value={val4} onChange={e => setVal4(e.target.value)} />
-          </div>
-          <div className="text-center pt-6 border-t border-slate-100">
-             <span className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900 break-words">{calc2}%</span>
-          </div>
-        </div>
+            <div className="space-y-3 flex-grow">
+              {card.inputs.map((inp, j) => (
+                <div key={j}>
+                  <label className="block text-[9px] font-black text-slate-400 uppercase mb-1.5 tracking-widest">{inp.label}</label>
+                  <input 
+                    type="number" 
+                    placeholder={inp.placeholder} 
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 font-bold text-sm outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 bg-slate-50/50 hover:bg-slate-50 transition-all" 
+                    value={inp.value} 
+                    onChange={e => inp.onChange(e.target.value)} 
+                  />
+                </div>
+              ))}
+            </div>
 
-        <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 space-y-6 flex flex-col hover:bg-white hover:border-indigo-100 transition-all shadow-sm">
-          <h4 className="text-[10px] font-black text-indigo-600 uppercase tracking-[0.2em]">% Change</h4>
-          <div className="space-y-4 flex-grow">
-            <input type="text" placeholder="From" className="w-full p-4 rounded-xl border border-slate-200 font-bold outline-none focus:ring-2 focus:ring-indigo-500" value={val5} onChange={e => setVal5(e.target.value)} />
-            <input type="text" placeholder="To" className="w-full p-4 rounded-xl border border-slate-200 font-bold outline-none focus:ring-2 focus:ring-indigo-500" value={val6} onChange={e => setVal6(e.target.value)} />
+            <div className="text-center pt-5 border-t border-slate-100">
+              <span className={`text-3xl font-black tracking-tight ${
+                card.isChange 
+                  ? (parseFloat(card.result) >= 0 ? 'text-emerald-600' : 'text-rose-600') 
+                  : 'text-indigo-700'
+              }`}>
+                {card.result}{card.suffix}
+              </span>
+            </div>
           </div>
-          <div className="text-center pt-6 border-t border-slate-100">
-             <span className={`text-2xl md:text-3xl lg:text-4xl font-black break-words ${(parseFloat(val6)||0) >= (parseFloat(val5)||0) ? 'text-emerald-500' : 'text-red-500'}`}>{calc3}%</span>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

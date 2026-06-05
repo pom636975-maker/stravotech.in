@@ -16,6 +16,7 @@ type SEOProps = {
   openGraph?: OpenGraph;
   twitterHandle?: string;
   structuredData?: object | object[] | null;
+  noSuffix?: boolean;
 };
 
 const SEO: React.FC<SEOProps> = ({
@@ -26,9 +27,10 @@ const SEO: React.FC<SEOProps> = ({
   openGraph,
   twitterHandle,
   structuredData,
+  noSuffix = false,
 }) => {
   const siteName = 'Stravotech';
-  const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+  const fullTitle = noSuffix || title.includes(siteName) ? title : `${title} | ${siteName}`;
 
   // Support single or array of structured data objects
   const sdArray = structuredData
@@ -51,15 +53,15 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:title" content={openGraph?.title || fullTitle} />
       <meta property="og:description" content={openGraph?.description || description} />
       {openGraph?.url && <meta property="og:url" content={openGraph.url} />}
-      {openGraph?.image && <meta property="og:image" content={openGraph.image} />}
+      <meta property="og:image" content={openGraph?.image || 'https://stravotech.in/og-image.png'} />
       <meta property="og:type" content="website" />
 
       {/* Twitter */}
-      <meta name="twitter:card" content={openGraph?.image ? 'summary_large_image' : 'summary'} />
+      <meta name="twitter:card" content="summary_large_image" />
       {twitterHandle && <meta name="twitter:site" content={twitterHandle} />}
       <meta name="twitter:title" content={openGraph?.title || fullTitle} />
       <meta name="twitter:description" content={openGraph?.description || description} />
-      {openGraph?.image && <meta name="twitter:image" content={openGraph.image} />}
+      <meta name="twitter:image" content={openGraph?.image || 'https://stravotech.in/og-image.png'} />
 
       {/* Structured data JSON-LD – supports multiple objects */}
       {sdArray.map((sd, i) => (

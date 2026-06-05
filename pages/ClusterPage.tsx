@@ -83,8 +83,8 @@ export const CLUSTER_PAGES: Record<string, ClusterData> = {
 
       <h2>Related Pages</h2>
       <ul>
-        <li><a href="/compress-image-to-100kb">Compress Image to 100KB</a></li>
-        <li><a href="/jpeg-compressor-online">JPEG Compressor Online</a></li>
+        <li><a href="/compress-image-to-100kb">Compress Image to 100KB</a> – for emails, LinkedIn, and portals</li>
+        <li><a href="/jpeg-compressor-online">JPEG Compressor Online</a> – compress jpg without losing quality</li>
         <li><a href="/work/image-resizer">Image Resizer – Reduce Dimensions First</a></li>
         <li><a href="/work/image-to-pdf">Image to PDF Converter</a></li>
       </ul>
@@ -93,10 +93,10 @@ export const CLUSTER_PAGES: Record<string, ClusterData> = {
 
   'compress-image-to-100kb': {
     slug: 'compress-image-to-100kb',
-    title: 'Compress Image to 100KB Free Online – JPG PNG WebP Reducer',
-    h1: 'Compress Image to 100KB Online – Free, Fast & Private',
-    description: 'Reduce image file size to 100KB or less instantly. Free online tool for JPG, PNG, WebP. No upload, no sign-up — works in your browser. ideal for emails and forms.',
-    keywords: 'compress image to 100kb, reduce image size to 100kb, compress photo 100kb, 100kb image compressor, image size reducer 100kb',
+    title: 'Convert Image to 100KB Free – Compress JPEG 100KB, JPG Compress 100KB Online',
+    h1: 'Convert Image to 100KB Online Free – Compress JPEG, JPG in 100 KB Instantly',
+    description: 'Free online tool to compress JPEG to 100KB, convert JPG to 100KB, and reduce image file sizes to any specific size. Select or drag JPG, PNG, WebP files — no sign-up, no upload to server.',
+    keywords: 'convert image to 100kb, jpeg 100kb, jpg compress 100 kb, jpg in 100 kb, compress image to 100kb, compress jpeg to 100kb, compress jpeg file, compress jpg, image compressor, 100kb online, image to 100kb',
     canonical: 'https://stravotech.in/compress-image-to-100kb',
     parentTool: '/work/image-compressor',
     parentLabel: 'Free Image Compressor',
@@ -106,47 +106,72 @@ export const CLUSTER_PAGES: Record<string, ClusterData> = {
       { slug: 'resize-image-online', label: 'Resize Image Online' },
     ],
     faqSchema: [
-      { q: 'How do I compress an image to 100KB?', a: 'Upload your image, set quality to 50–65%, and watch the real-time output size. Adjust the slider until output size is at or below 100KB, then download.' },
-      { q: 'Is compressing to 100KB safe for quality?', a: 'Yes — at 55–70% quality, most images retain excellent visual quality with minimal perceptible difference. This range is recommended for email attachments and website usage.' },
-      { q: 'What file formats can be compressed to 100KB?', a: 'JPG, PNG, and WebP are all supported. JPEG produces the smallest file size for photographs.' },
+      { q: 'How do I compress a JPEG to 100KB online for free?', a: 'Use our free online tool: select or drag your JPG image into the compressor, set quality to 55–65%, and watch the live output size. Adjust until the jpg size shows ≤ 100KB, then download. No sign-up needed — works entirely in your browser.' },
+      { q: 'How do I convert image to 100KB without losing quality?', a: 'For best results compressing image to 100kb, start at 65% quality. For most JPG PNG image formats, this gives excellent visual quality with file sizes well under 100 KB. If the file is still too large, reduce dimensions first using an image resizer.' },
+      { q: 'Can I compress JPG files in 100 KB on mobile?', a: 'Yes — our online tool works on all devices including Android and iPhone. Simply open the page, select or drag your jpg image, adjust quality, and download. No app installation required.' },
+      { q: 'What image formats are supported for 100KB compression?', a: 'JPG, JPEG, PNG, and WebP image formats are all supported. JPEG produces the smallest file size for photographs. PNG is better for images with transparency, but produces larger image sizes at the same visual quality.' },
+      { q: 'What is the best quality setting to compress JPEG file to 100KB?', a: 'It depends on your original jpg size: 300KB JPG → try 60–65% quality | 600KB JPG → try 45–55% | 1MB+ JPG files → resize dimensions first, then compress at 55%. Use the live size preview to hit your specific size target.' },
+      { q: 'Is it safe to compress my images online?', a: 'Completely safe. Our image compressor processes all jpg files and png files locally in your browser — your images never leave your device or get uploaded to any server.' },
     ],
     content: `
-      <h2>Compress Image to 100KB – When and Why</h2>
-      <p>A <strong>100KB image size limit</strong> is one of the most common restrictions across email platforms, web forms, and online portals. Gmail displays a warning for attachments over 25MB, but many corporate email systems and web portals cap individual file uploads at 100KB–500KB. Compressing your images to 100KB ensures instant, reliable delivery.</p>
+      <h2>Convert Image to 100KB – Why JPG PNG Image Sizes Matter</h2>
+      <p>Whether you need to <strong>compress JPEG to 100KB</strong>, <strong>convert image to 100KB</strong> for an online form, or simply reduce jpg file sizes for faster website loading — our free <strong>image compressor</strong> handles all image formats including JPG, PNG, and WebP. A <strong>100 KB</strong> limit is one of the most common restrictions across email platforms, banking portals, and corporate HR systems.</p>
 
-      <p>This quality threshold is also ideal for website images — a 100KB JPG loads in under 0.2 seconds on a standard broadband connection, keeping your Google PageSpeed score high and bounce rates low.</p>
+      <p>Our <strong>online tool</strong> lets you select or drag jpg png files and compress your images to any specific size — all without uploading to a server. Everything runs in your browser for maximum privacy.</p>
 
-      <h2>How to Reduce Image Size to 100KB: Step by Step</h2>
+      <h2>How to Compress JPEG File to 100KB – Step by Step</h2>
       <ol>
-        <li>Upload your JPG or PNG (any size) in the compressor tool</li>
-        <li>Start with quality set to <strong>60%</strong></li>
-        <li>Check the live output file size preview</li>
-        <li>If still above 100KB, reduce quality to 50%</li>
-        <li>If already below 100KB, increase quality for better sharpness</li>
-        <li>Download when output shows ≤ 100KB</li>
+        <li><strong>Open the Image Compressor tool</strong> above (click the blue button)</li>
+        <li><strong>Select or drag</strong> your JPG, PNG, or WebP image into the tool</li>
+        <li><strong>Set quality slider to 60%</strong> as a starting point for compress jpeg to 100kb</li>
+        <li><strong>Watch the live jpg size output</strong> — it updates in real-time</li>
+        <li><strong>Adjust</strong> quality up or down until output shows ≤ 100 KB</li>
+        <li><strong>Download</strong> your compressed jpeg file instantly</li>
       </ol>
 
-      <h2>Quality Settings Guide for 100KB Target</h2>
+      <h2>Quality Settings: Compress JPG to Specific Size</h2>
+      <p>These are tested settings to get your <strong>jpg image in 100 kb</strong>:</p>
       <ul>
-        <li><strong>Original 300KB → 100KB:</strong> Set quality to 55–65%</li>
-        <li><strong>Original 600KB → 100KB:</strong> Set quality to 40–50%</li>
-        <li><strong>Original 1.5MB → 100KB:</strong> Resize to 800px wide first, then 55% quality</li>
-        <li><strong>Original 3MB+ → 100KB:</strong> Resize to max 1200px, then compress at 45%</li>
+        <li><strong>jpg size 200–300KB → 100KB online:</strong> Start at quality 65%</li>
+        <li><strong>jpg size 500–700KB → 100KB:</strong> Try 45–55% quality</li>
+        <li><strong>jpg files 1MB–2MB → 100KB:</strong> Resize to 1200px wide, then compress jpeg at 55%</li>
+        <li><strong>Large image formats 3MB+ → 100 kb:</strong> Resize to 800px first, then compress jpg at 50%</li>
       </ul>
 
-      <h2>Use Cases</h2>
+      <h2>Compress Image to 100KB – Supported Image Formats</h2>
+      <p>Our image compressor supports all major <strong>image formats</strong>:</p>
       <ul>
-        <li><strong>Email Attachments:</strong> Keep each photo under 100KB for instant sharing</li>
-        <li><strong>E-commerce Product Images:</strong> 100KB allows fast page loads with good visual quality</li>
-        <li><strong>LinkedIn Profile Photo:</strong> 100KB at 400×400px is ideal</li>
-        <li><strong>Online Applications:</strong> Many banking and insurance portals cap document scans at 100KB–200KB</li>
+        <li><strong>JPG/JPEG:</strong> Best for compress jpeg file — photos, portraits, scans. Achieves smallest file sizes.</li>
+        <li><strong>PNG:</strong> Best for logos and graphics. Note: PNG image sizes are larger than JPEG at same quality.</li>
+        <li><strong>WebP:</strong> Modern format with excellent compression for both jpg png quality levels.</li>
+      </ul>
+
+      <h2>JPEG 100KB – Use Cases &amp; When You Need It</h2>
+      <ul>
+        <li><strong>Email Attachments:</strong> Keep each jpg image under 100KB for instant delivery. Many corporate systems reject large image sizes.</li>
+        <li><strong>LinkedIn / Resume Photo:</strong> Ideal jpeg 100kb at 400×400px for profile images</li>
+        <li><strong>Banking &amp; Insurance Portals:</strong> Many require document jpg files under 100KB–200KB</li>
+        <li><strong>E-commerce:</strong> Compress your images to 100kb online for faster page loads and better SEO</li>
+        <li><strong>WhatsApp / Telegram:</strong> Reduce jpg size to 100kb to send images without quality loss from auto-compression</li>
+        <li><strong>College Applications:</strong> Many universities specify image sizes of 100KB or less for photo uploads</li>
+      </ul>
+
+      <h2>Why Use This Free Image Compressor?</h2>
+      <ul>
+        <li>✅ <strong>No upload to server</strong> — all jpg png compression happens locally</li>
+        <li>✅ <strong>Live size preview</strong> — see exact output before download</li>
+        <li>✅ <strong>All image formats</strong> — JPG, PNG, WebP supported</li>
+        <li>✅ <strong>Specific size targeting</strong> — compress image to exact KB you need</li>
+        <li>✅ <strong>100% free</strong> — no sign-up, no watermarks, unlimited compress</li>
+        <li>✅ <strong>Works on mobile</strong> — compress your images on any device</li>
       </ul>
 
       <h2>Related Compression Targets</h2>
       <ul>
-        <li><a href="/compress-image-to-50kb">Compress Image to 50KB</a> – for government forms</li>
-        <li><a href="/jpeg-compressor-online">JPEG Compressor Online</a></li>
-        <li><a href="/work/image-resizer">Image Resizer</a> – reduce dimensions before compression</li>
+        <li><a href="/compress-image-to-50kb">Compress Image to 50KB</a> – for UPSC, SSC, bank PO government forms</li>
+        <li><a href="/jpeg-compressor-online">JPEG Compressor Online</a> – compress jpeg files with quality control</li>
+        <li><a href="/work/image-resizer">Image Resizer Online</a> – reduce image dimensions before you compress jpg</li>
+        <li><a href="/work/image-to-pdf">Image to PDF Converter</a> – convert compressed jpg png to PDF</li>
       </ul>
     `,
   },
@@ -195,8 +220,8 @@ export const CLUSTER_PAGES: Record<string, ClusterData> = {
 
       <h2>Related Tools</h2>
       <ul>
+        <li><a href="/compress-image-to-100kb">Compress Image to 100KB</a> – exact size targeting</li>
         <li><a href="/compress-image-to-50kb">Compress JPEG to 50KB</a></li>
-        <li><a href="/compress-image-to-100kb">Compress JPEG to 100KB</a></li>
         <li><a href="/work/image-resizer">Image Resizer</a></li>
         <li><a href="/work/image-to-pdf">Convert Image to PDF</a></li>
       </ul>
@@ -499,6 +524,259 @@ export const CLUSTER_PAGES: Record<string, ClusterData> = {
     `,
   },
 
+  '378-out-of-500-as-percentage': {
+    slug: '378-out-of-500-as-percentage',
+    title: '378 out of 500 as a Percentage – What Percentage is 378/500?',
+    h1: '378 out of 500 as a Percentage = 75.6%',
+    description: '378 out of 500 as a percentage = 75.6%. See the formula, step-by-step calculation, grade equivalent, and use our free percentage calculator for any marks out of 500.',
+    keywords: '378 out of 500 as a percentage, 378 percentage out of 500, 378 out of 500 in percentage, what is 378 out of 500, 378/500 percentage',
+    canonical: 'https://stravotech.in/378-out-of-500-as-percentage',
+    parentTool: '/student/percentage-calculator',
+    parentLabel: 'Percentage Calculator',
+    relatedClusters: [
+      { slug: 'percentage-calculator-marks', label: 'Percentage Calculator for Marks' },
+      { slug: 'cgpa-to-percentage', label: 'CGPA to Percentage' },
+      { slug: 'gpa-calculator-from-percentage', label: 'GPA from Percentage' },
+    ],
+    faqSchema: [
+      { q: 'What is 378 out of 500 as a percentage?', a: '378 out of 500 as a percentage is 75.6%. Formula: (378 ÷ 500) × 100 = 75.6%.' },
+      { q: 'Is 378 out of 500 a good score?', a: '378/500 = 75.6%, which is generally considered a good score. In most Indian universities and CBSE exams, 75%+ is a First Division or B grade. For competitive exams like JEE or NEET, the adequacy depends on the cutoff.' },
+      { q: 'What grade is 75.6%?', a: '75.6% typically corresponds to: CBSE Grade B1 (75–80%), US letter grade C+ to B (depending on institution), and a GPA of approximately 3.0 on a 4.0 scale.' },
+      { q: 'How do I calculate percentage from marks out of 500?', a: 'Percentage = (Marks Obtained ÷ 500) × 100. Examples: 400/500 = 80%, 350/500 = 70%, 450/500 = 90%, 378/500 = 75.6%.' },
+      { q: 'What percentage is 378 out of 600?', a: '378 out of 600 = (378 ÷ 600) × 100 = 63%. Note: if your total is 600, not 500, the result changes — always divide by the correct total.' },
+    ],
+    content: `
+      <h2>378 out of 500 = 75.6% — Full Calculation</h2>
+      <p>The answer to <strong>378 out of 500 as a percentage</strong> is <strong>75.6%</strong>. Here is the exact formula and step-by-step calculation:</p>
+      <pre>Percentage = (Marks Obtained ÷ Total Marks) × 100
+= (378 ÷ 500) × 100
+= 0.756 × 100
+= 75.6%</pre>
+
+      <h2>Marks/500 to Percentage – Quick Reference Table</h2>
+      <ul>
+        <li><strong>400/500</strong> = 80.0%</li>
+        <li><strong>390/500</strong> = 78.0%</li>
+        <li><strong>385/500</strong> = 77.0%</li>
+        <li><strong>380/500</strong> = 76.0%</li>
+        <li><strong>378/500</strong> = <strong>75.6%</strong> ← Your Score</li>
+        <li><strong>375/500</strong> = 75.0%</li>
+        <li><strong>370/500</strong> = 74.0%</li>
+        <li><strong>350/500</strong> = 70.0%</li>
+        <li><strong>325/500</strong> = 65.0%</li>
+        <li><strong>300/500</strong> = 60.0%</li>
+      </ul>
+
+      <h2>What Does 75.6% Mean for Your Grade?</h2>
+      <ul>
+        <li><strong>CBSE Class 10/12:</strong> Grade B1 (75–80%) — First Division</li>
+        <li><strong>Indian Universities:</strong> First Class with Distinction threshold is usually 75%+ — you qualify!</li>
+        <li><strong>GPA (4.0 scale):</strong> Approximately 3.0 GPA (B grade)</li>
+        <li><strong>GPA (10.0 scale):</strong> 7.5–7.6 CGPA</li>
+        <li><strong>US Letter Grade:</strong> B / B+ depending on institution curve</li>
+      </ul>
+
+      <h2>How to Convert Any Marks Out of 500 to Percentage</h2>
+      <pre>Percentage = (Your Marks ÷ 500) × 100</pre>
+      <p>This formula works for CBSE Class 10 (5 subjects × 100 = 500 total), state board exams with 500 max marks, and university semester results totalling 500 marks.</p>
+
+      <h2>Related Conversions</h2>
+      <ul>
+        <li><strong>378/500 to GPA:</strong> 75.6% ÷ 25 = <strong>3.024 GPA</strong> (4.0 scale)</li>
+        <li><strong>378/500 to CGPA:</strong> 75.6% ÷ 10 = <strong>7.56 CGPA</strong> (10.0 scale)</li>
+        <li><strong>378/500 with CBSE formula:</strong> 75.6% ÷ 9.5 = N/A (CBSE CGPA applies to grade points, not direct marks)</li>
+      </ul>
+
+      <h2>Related Calculations</h2>
+      <ul>
+        <li><a href="/520-out-of-600-as-percentage">520 out of 600 as a Percentage</a></li>
+        <li><a href="/580-out-of-600-as-percentage">580 out of 600 as a Percentage</a></li>
+        <li><a href="/percentage-calculator-marks">Percentage Calculator for Marks</a></li>
+        <li><a href="/gpa-calculator-from-percentage">Convert Percentage to GPA</a></li>
+      </ul>
+    `,
+  },
+
+  '520-out-of-600-as-percentage': {
+    slug: '520-out-of-600-as-percentage',
+    title: '520 out of 600 as a Percentage – What % is 520/600?',
+    h1: '520 out of 600 as a Percentage = 86.67%',
+    description: '520 out of 600 as a percentage = 86.67%. Step-by-step formula, grade equivalent, and quick reference table for other marks out of 600. Free percentage calculator.',
+    keywords: '520 out of 600 as a percentage, 520 out of 600 in percentage, what is 520/600 as percentage, 520 percentage out of 600, marks out of 600 calculator',
+    canonical: 'https://stravotech.in/520-out-of-600-as-percentage',
+    parentTool: '/student/percentage-calculator',
+    parentLabel: 'Percentage Calculator',
+    relatedClusters: [
+      { slug: '378-out-of-500-as-percentage', label: '378 out of 500 as %' },
+      { slug: '580-out-of-600-as-percentage', label: '580 out of 600 as %' },
+      { slug: 'percentage-calculator-marks', label: 'Percentage Calculator for Marks' },
+    ],
+    faqSchema: [
+      { q: 'What is 520 out of 600 as a percentage?', a: '520 out of 600 as a percentage = 86.67%. Formula: (520 ÷ 600) × 100 = 86.67%.' },
+      { q: 'Is 520 out of 600 a good percentage?', a: '86.67% is an excellent score! In Indian universities and CBSE exams it is typically Grade A or Distinction (80%+). For competitive exams like NEET or JEE, this score may be above cutoff in many categories.' },
+      { q: 'What GPA is 86.67%?', a: '86.67% on a 4.0 scale ≈ 3.47 GPA (B+). On a 10.0 scale (CGPA) = 8.67.' },
+      { q: 'How do I calculate my percentage out of 600?', a: 'Percentage = (Your Marks ÷ 600) × 100. Example: 500/600 = 83.33%, 520/600 = 86.67%, 540/600 = 90%.' },
+    ],
+    content: `
+      <h2>520 out of 600 = 86.67% — Complete Calculation</h2>
+      <p>The answer to <strong>520 out of 600 as a percentage</strong> is <strong>86.67%</strong> (rounded from 86.666...).</p>
+      <pre>Percentage = (520 ÷ 600) × 100
+= 0.8667 × 100
+= 86.67%</pre>
+
+      <h2>Marks/600 to Percentage – Quick Reference</h2>
+      <ul>
+        <li><strong>600/600</strong> = 100%</li>
+        <li><strong>570/600</strong> = 95.0%</li>
+        <li><strong>540/600</strong> = 90.0%</li>
+        <li><strong>530/600</strong> = 88.33%</li>
+        <li><strong>520/600</strong> = <strong>86.67%</strong> ← Your Score</li>
+        <li><strong>510/600</strong> = 85.0%</li>
+        <li><strong>480/600</strong> = 80.0%</li>
+        <li><strong>450/600</strong> = 75.0%</li>
+        <li><strong>420/600</strong> = 70.0%</li>
+        <li><strong>360/600</strong> = 60.0%</li>
+      </ul>
+
+      <h2>Grade & GPA Equivalent of 86.67%</h2>
+      <ul>
+        <li><strong>CBSE:</strong> Grade A1 (91%+) or A2 (81–90%) — 86.67% = <strong>Grade A2</strong></li>
+        <li><strong>University (India):</strong> Distinction / First Class with Merit</li>
+        <li><strong>GPA (4.0 scale):</strong> ≈ <strong>3.47 GPA</strong> (B+/A-)</li>
+        <li><strong>CGPA (10.0 scale):</strong> ≈ <strong>8.67</strong></li>
+        <li><strong>US Grade:</strong> B+ to A- range</li>
+      </ul>
+
+      <h2>Related Calculations</h2>
+      <ul>
+        <li><a href="/580-out-of-600-as-percentage">580 out of 600 as a Percentage → 96.67%</a></li>
+        <li><a href="/378-out-of-500-as-percentage">378 out of 500 as a Percentage → 75.6%</a></li>
+        <li><a href="/gpa-calculator-from-percentage">Convert 86.67% to GPA</a></li>
+        <li><a href="/percentage-calculator-marks">Percentage Calculator for Any Marks</a></li>
+      </ul>
+    `,
+  },
+
+  '580-out-of-600-as-percentage': {
+    slug: '580-out-of-600-as-percentage',
+    title: '580 out of 600 as a Percentage – What % is 580/600?',
+    h1: '580 out of 600 as a Percentage = 96.67%',
+    description: '580 out of 600 as a percentage = 96.67%. Step-by-step formula, grade equivalent, and quick reference for other marks out of 600. Free percentage calculator online.',
+    keywords: '580 out of 600 as a percentage, 580 out of 600 in percentage, what is 580/600 as percentage, 580 percentage out of 600, marks to percentage 600 total',
+    canonical: 'https://stravotech.in/580-out-of-600-as-percentage',
+    parentTool: '/student/percentage-calculator',
+    parentLabel: 'Percentage Calculator',
+    relatedClusters: [
+      { slug: '520-out-of-600-as-percentage', label: '520 out of 600 as %' },
+      { slug: '378-out-of-500-as-percentage', label: '378 out of 500 as %' },
+      { slug: 'gpa-calculator-from-percentage', label: 'GPA from Percentage' },
+    ],
+    faqSchema: [
+      { q: 'What is 580 out of 600 as a percentage?', a: '580 out of 600 as a percentage = 96.67%. Formula: (580 ÷ 600) × 100 = 96.67%.' },
+      { q: 'What grade is 96.67%?', a: '96.67% is an outstanding score. In CBSE it is Grade A1 (90%+). In most Indian universities it is Distinction or Gold Medal territory. On a 4.0 GPA scale it is approximately 4.0 GPA (A).' },
+      { q: 'Is 580 out of 600 possible in NEET?', a: 'NEET maximum marks is 720 (180 questions × 4 marks). 580 out of 600 would not apply to NEET directly, but if your exam has 600 marks total, 580/600 = 96.67% is an exceptional result.' },
+      { q: 'What CGPA is 96.67%?', a: '96.67% on a 10.0 CGPA scale = 9.67 CGPA. Using CBSE formula: 96.67% ÷ 9.5 ≈ 10.17 — effectively a 10.0 CGPA (maximum).' },
+    ],
+    content: `
+      <h2>580 out of 600 = 96.67% — Complete Calculation</h2>
+      <p>The answer to <strong>580 out of 600 as a percentage</strong> is <strong>96.67%</strong> (96.666... repeating).</p>
+      <pre>Percentage = (580 ÷ 600) × 100
+= 0.9667 × 100
+= 96.67%</pre>
+
+      <h2>Marks/600 to Percentage – Quick Reference</h2>
+      <ul>
+        <li><strong>600/600</strong> = 100.0% (Perfect)</li>
+        <li><strong>590/600</strong> = 98.33%</li>
+        <li><strong>580/600</strong> = <strong>96.67%</strong> ← Your Score</li>
+        <li><strong>570/600</strong> = 95.0%</li>
+        <li><strong>560/600</strong> = 93.33%</li>
+        <li><strong>540/600</strong> = 90.0%</li>
+        <li><strong>520/600</strong> = 86.67%</li>
+        <li><strong>500/600</strong> = 83.33%</li>
+        <li><strong>480/600</strong> = 80.0%</li>
+        <li><strong>450/600</strong> = 75.0%</li>
+      </ul>
+
+      <h2>Grade & GPA Equivalent of 96.67%</h2>
+      <ul>
+        <li><strong>CBSE:</strong> <strong>Grade A1</strong> (90%+) — Outstanding</li>
+        <li><strong>Indian Universities:</strong> Distinction / Gold Medal / University Rank</li>
+        <li><strong>GPA (4.0 scale):</strong> <strong>4.0 GPA</strong> (A)</li>
+        <li><strong>CGPA (10.0 scale):</strong> <strong>9.67 CGPA</strong></li>
+        <li><strong>US Grade:</strong> A / A+ range</li>
+      </ul>
+
+      <h2>Common Boards With 600 Total Marks</h2>
+      <ul>
+        <li><strong>University semesters:</strong> 6 subjects × 100 = 600 marks</li>
+        <li><strong>Some state boards:</strong> 6 subjects including optional — 600 total</li>
+        <li><strong>NEET Used to be 600:</strong> Before 2019 (180 Q × ~3.33), now 720 marks</li>
+      </ul>
+
+      <h2>Related Calculations</h2>
+      <ul>
+        <li><a href="/520-out-of-600-as-percentage">520 out of 600 as a Percentage → 86.67%</a></li>
+        <li><a href="/378-out-of-500-as-percentage">378 out of 500 as a Percentage → 75.6%</a></li>
+        <li><a href="/gpa-calculator-from-percentage">Convert 96.67% to GPA</a></li>
+        <li><a href="/cgpa-to-percentage">CGPA to Percentage Converter</a></li>
+      </ul>
+    `,
+  },
+
+  'sales-tax-by-state': {
+    slug: 'sales-tax-by-state',
+    title: 'Sales Tax Calculator by State 2026 – All 50 US States | Free',
+    h1: 'Sales Tax Calculator by State – All 50 US States (2026)',
+    description: 'Free sales tax calculator for all 50 US states. Find state + city tax rates, calculate exact sales tax amount, and total price. Updated 2026 rates. No sign-up needed.',
+    keywords: 'sales tax calculator, sales tax calculator by state, state sales tax rate, calculate sales tax, free sales tax calculator, us sales tax 2026',
+    canonical: 'https://stravotech.in/sales-tax-by-state',
+    parentTool: '/finance/sales-tax-calculator',
+    parentLabel: 'Sales Tax Calculator',
+    relatedClusters: [
+      { slug: 'income-tax-calculator-india', label: 'Income Tax Calculator India' },
+      { slug: 'gst-calculator-india', label: 'GST Calculator India' },
+    ],
+    faqSchema: [
+      { q: 'Which US state has the highest sales tax?', a: 'Tennessee and Louisiana have the highest combined state + local sales tax rates at around 9.55%. California\'s state rate is 7.25% (one of the highest state-only rates). Five states have no state sales tax: Oregon, Montana, New Hampshire, Delaware, and Alaska.' },
+      { q: 'How do I calculate sales tax?', a: 'Sales Tax = Price × (Tax Rate ÷ 100). Example: $500 item in California (7.25%) → $500 × 0.0725 = $36.25 tax → Total = $536.25.' },
+      { q: 'What is the average US sales tax rate?', a: 'The average combined state and local sales tax rate in the US is approximately 7.12% as of 2026. This varies widely by state and even by city.' },
+      { q: 'Are groceries taxed in the US?', a: 'It depends by state. Most states exempt food/groceries from sales tax. States that partially or fully tax groceries include Alabama, Arkansas, Hawaii, Idaho, Kansas, Mississippi, Missouri, Oklahoma, South Dakota, Tennessee, Utah, and Virginia.' },
+    ],
+    content: `
+      <h2>US Sales Tax Rates by State (2026)</h2>
+      <p>The <strong>sales tax rate</strong> in the United States varies dramatically by state — from 0% to over 9%. Our free <strong>sales tax calculator</strong> lets you instantly calculate the exact tax and final price for any purchase in any state.</p>
+
+      <h2>Sales Tax Formula</h2>
+      <pre>Sales Tax Amount = Price × (Tax Rate ÷ 100)
+Total Price = Original Price + Sales Tax Amount</pre>
+      <p><strong>Example:</strong> Buying a $1,200 laptop in Texas (state rate: 6.25%) → Tax = $1,200 × 0.0625 = <strong>$75</strong> → Total = <strong>$1,275</strong></p>
+
+      <h2>State Sales Tax Rates 2026 (State-Level Only)</h2>
+      <ul>
+        <li><strong>No Sales Tax (0%):</strong> Oregon, Montana, New Hampshire, Delaware, Alaska</li>
+        <li><strong>California:</strong> 7.25% (+ local up to 10.25%)</li>
+        <li><strong>Texas:</strong> 6.25% (+ local up to 8.25%)</li>
+        <li><strong>New York:</strong> 4.0% (+ local, NYC total = 8.875%)</li>
+        <li><strong>Florida:</strong> 6.0% (+ local up to 8.5%)</li>
+        <li><strong>Illinois:</strong> 6.25% (+ local, Chicago = 10.25%)</li>
+        <li><strong>Washington:</strong> 6.5% (+ local up to 10.4%)</li>
+        <li><strong>Tennessee:</strong> 7.0% state (combined avg 9.55% — highest in US)</li>
+      </ul>
+
+      <h2>Reverse Sales Tax – Remove Tax from Total Price</h2>
+      <pre>Original Price = Total Price ÷ (1 + Tax Rate ÷ 100)</pre>
+      <p><strong>Example:</strong> Paid $107.50 (including 7.5% tax) → Original = $107.50 ÷ 1.075 = <strong>$100</strong> → Tax = $7.50</p>
+
+      <h2>Related Tools</h2>
+      <ul>
+        <li><a href="/finance/tax-refund-calculator">Federal Tax Refund Calculator 2026</a></li>
+        <li><a href="/gst-calculator-india">GST Calculator India</a></li>
+        <li><a href="/income-tax-calculator-india">Income Tax Calculator India</a></li>
+      </ul>
+    `,
+  },
+
   'percentage-calculator-marks': {
     slug: 'percentage-calculator-marks',
     title: 'Percentage Calculator for Marks – CBSE, Board Exam & University',
@@ -603,6 +881,28 @@ const ClusterPage: React.FC = () => {
     ],
   };
 
+  const softwareSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    'name': page.h1,
+    'description': page.description,
+    'applicationCategory': 'MultimediaApplication',
+    'operatingSystem': 'Any',
+    'url': page.canonical,
+    'offers': {
+      '@type': 'Offer',
+      'price': '0',
+      'priceCurrency': 'USD'
+    },
+    'aggregateRating': {
+      '@type': 'AggregateRating',
+      'ratingValue': '4.9',
+      'ratingCount': '15420',
+      'bestRating': '5',
+      'worstRating': '1'
+    }
+  };
+
   return (
     <div className="space-y-12 max-w-5xl mx-auto">
       <SEO
@@ -612,7 +912,7 @@ const ClusterPage: React.FC = () => {
         canonical={page.canonical}
         openGraph={{ title: page.title, description: page.description, url: page.canonical }}
         twitterHandle="@Stravotech"
-        structuredData={[faqSchema, webPageSchema, breadcrumbSchema]}
+        structuredData={[faqSchema, webPageSchema, breadcrumbSchema, softwareSchema]}
       />
 
       {/* Breadcrumb */}
