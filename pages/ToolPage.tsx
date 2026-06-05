@@ -298,7 +298,7 @@ const ToolPage: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-10">
+    <div className="max-w-[90rem] mx-auto px-1 sm:px-3 lg:px-0 py-5 lg:py-10">
       <SEO 
         title={richData?.title || tool.seoTitle || tool.name}
         description={richData?.description || tool.seoDescription || tool.description}
@@ -309,7 +309,7 @@ const ToolPage: React.FC = () => {
       />
 
       <div className="mb-8">
-        <nav className="flex items-center text-xs font-bold text-slate-400 mb-4 bg-slate-50 w-fit px-4 py-2 rounded-full border border-slate-100">
+        <nav className="flex max-w-full items-center text-xs font-bold text-slate-400 mb-4 bg-slate-50 w-fit px-4 py-2 rounded-full border border-slate-100 overflow-x-auto">
           <Link to="/" className="hover:text-indigo-600 transition-colors">Home</Link>
           <i className="fa-solid fa-chevron-right mx-3 text-[8px]"></i>
           <span className="text-slate-900">{tool.name}</span>
@@ -324,10 +324,10 @@ const ToolPage: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
-        <div className="lg:col-span-8 xl:col-span-9">
+        <div className="lg:col-span-8 xl:col-span-9 min-w-0">
           {/* Main Tool Interface Container */}
-          <div id="tool-interface" className="bg-white border-2 border-slate-100 rounded-[2rem] lg:rounded-[3rem] shadow-xl shadow-slate-200/50 mb-12 overflow-hidden">
-            <Suspense fallback={<div className="p-32 text-center text-indigo-600 font-black">STARTING ENGINE...</div>}>
+          <div id="tool-interface" className="bg-white border-2 border-slate-100 rounded-[1.5rem] sm:rounded-[2rem] lg:rounded-[3rem] shadow-xl shadow-slate-200/50 mb-12 overflow-hidden">
+            <Suspense fallback={<div className="p-10 sm:p-20 lg:p-32 text-center text-indigo-600 font-black">STARTING ENGINE...</div>}>
               {React.createElement(lazy(() => lazyMap[tool.id] ? lazyMap[tool.id]() : Promise.resolve({ default: () => <div className="p-20 text-center">Module Loading...</div> })))}
             </Suspense>
           </div>
@@ -350,7 +350,7 @@ const ToolPage: React.FC = () => {
             )}
 
             {(richData?.faqs?.length > 0 || !richData) && (
-              <div className="bg-white p-8 lg:p-10 rounded-[2rem] lg:rounded-[2.5rem] border border-slate-200 mb-12">
+              <div className="bg-white p-5 sm:p-8 lg:p-10 rounded-[1.5rem] lg:rounded-[2.5rem] border border-slate-200 mb-12">
                 <h2 className="text-2xl lg:text-3xl font-black text-slate-900 mb-8">Common Questions (FAQ)</h2>
                 <div className="space-y-8">
                   {(richData?.faqs || [
@@ -373,7 +373,7 @@ const ToolPage: React.FC = () => {
             )}
 
             {/* Source and Data Integrity Section */}
-            <div className="bg-slate-900 text-white p-8 lg:p-10 rounded-[2rem] lg:rounded-[2.5rem] mb-12 overflow-hidden relative">
+            <div className="bg-slate-900 text-white p-5 sm:p-8 lg:p-10 rounded-[1.5rem] lg:rounded-[2.5rem] mb-12 overflow-hidden relative">
               <div className="relative z-10">
                  <h3 className="text-xl font-black mb-4 flex items-center">
                    <i className="fa-solid fa-microscope text-indigo-400 mr-3"></i>
